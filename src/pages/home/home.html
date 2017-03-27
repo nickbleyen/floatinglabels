@@ -1,0 +1,30 @@
+<!--
+  Generated template for the Rapport page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Rapport</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="rapport" (ngSubmit)="send()">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Column lot*</ion-label>
+        <ion-input [(ngModel)]="columnLot" type="text" formControlName="columnLot"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Number of injections*</ion-label>
+        <ion-input [(ngModel)]="nrInjections" type="number" formControlName="nrInjections"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button type="submit" [disabled]="!rapport.valid">Send</button>
+  </form>
+</ion-content>
